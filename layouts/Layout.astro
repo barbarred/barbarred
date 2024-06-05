@@ -1,7 +1,6 @@
 ---
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-import '@fontsource-variable/onest'
 
 interface Props {
 	title: string;
@@ -30,14 +29,14 @@ const { description, title } = Astro.props;
 <style is:global>
 	@font-face {
 		font-family: 'MpoFont';
-		src: url('../../public/Fonts/font-mpo.otf');
+		src: url('/Fonts/font-mpo.otf');
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
 	}
 	@font-face {
 		font-family: 'Geist';
-		src: url('../../public/Fonts/GeistMonoVF.woff');
+		src: url('/Fonts/GeistMonoVF.woff');
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;

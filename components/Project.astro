@@ -1,0 +1,72 @@
+---
+import Badge from '../components/Badge.astro'
+import InstagramIcon from './Icons/InstagramIcon.astro';
+---
+
+<div class="mb-5 w-full">
+    <h3 class="text-xs md:text-sm font-semibold text-gray-400 mb-4">PROYECTO</h3>
+    <div class="flex mb-5 gap-x-12 md:gap-x-44">
+        <div class="flex flex-row items-center gap-x-2">
+            <a href="https://www.instagram.com/coming.gigs/"><InstagramIcon class="size-4"/></a>
+            <a href="https://www.instagram.com/coming.gigs/"><h2 class="text-sm md:text-base ml-1">Coming Gigs</h2></a>
+        </div>
+        <div>
+            <button class="demobtn font-semibold"><Badge>ver proyecto</Badge></button>
+        </div>
+    </div>
+    <div class="demo-container">
+        <div class="demo-modal">
+        <div class="flex flex-col mb-3">
+            <button class="text-black self-end btn-modal text-base font-semibold">cerrar</button>
+        </div>
+        <video controls muted="muted" class="w-full" src="/coming-gigs-demo.mp4"></video>
+        </div>
+    </div>
+</div>
+
+<style is:global>
+    .demo-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #111111bd;
+        display: flex;
+        opacity: 0;
+        pointer-events: none;
+
+    }
+    .demo-modal{
+        margin: auto;
+        width: 80%;
+        background-color: #FFF;
+        border-radius: 6px;
+        padding: 1em
+    }
+    .modal--show{
+        opacity: 1;
+        pointer-events: inherit;
+    }
+</style>
+<script>
+    
+    const show: HTMLButtonElement | null = document.querySelector(".demobtn")
+    if (show) {
+    show.addEventListener("click", () => {
+        const demo: HTMLButtonElement | null = document.querySelector(".demo-container")
+        if(demo){
+            demo.classList.add('modal--show')
+            }
+        });
+    }
+    const hidde: HTMLButtonElement | null = document.querySelector(".btn-modal")
+    if (hidde) {
+    hidde.addEventListener("click", () => {
+        const demo: HTMLButtonElement | null = document.querySelector(".demo-container")
+        if(demo){
+            demo.classList.remove('modal--show')
+            }
+        });
+    }
+</script>
